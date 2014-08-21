@@ -77,3 +77,5 @@ activate :blog do |blog|
 end
 
 activate :directory_indexes
+
+page "blog/*", :layout => :post
