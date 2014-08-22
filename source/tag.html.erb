@@ -1,0 +1,8 @@
+<h2>Posts tagged <%= tagname %></h2>
+<ul>
+  <% page_articles.each do |post| %>
+  <li>
+    <a href="<%= post.url %>"><%= post.title %></a>
+  </li>
+  <% end %>
+</ul>

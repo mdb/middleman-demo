@@ -2,4 +2,9 @@
   <h2><%= current_article.title %></h2>
   <p>Posted <%= current_article.date.strftime('%B %e, %Y') %></p>
   <%= yield %>
+  <ul>
+  <% current_article.tags.each do |tag| %>
+    <li><a href="/blog/tags/<%= tag %>/"><%= tag %></a></li>
+  <% end %>
+  </ul>
 <% end %>
