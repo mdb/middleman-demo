@@ -74,8 +74,10 @@ end
 activate :blog do |blog|
   blog.prefix = 'blog'
   blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.tag_template = "tag.html"
 end
 
 activate :directory_indexes
 
 page "blog/*", :layout => :post
+page "blog/tags/*", :layout => :layout
