@@ -1,3 +1,4 @@
+require 'fog'
 ###
 # Compass
 ###
@@ -81,3 +82,13 @@ activate :directory_indexes
 
 page "blog/*", :layout => :post
 page "blog/tags/*", :layout => :layout
+
+Fog.credentials = { path_style: true }
+
+activate :sync do |sync|
+  sync.fog_provider = 'AWS'
+  sync.fog_directory = 'www.middlemandemo.com'
+  sync.fog_region = 'us-east-1'
+  sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+end
