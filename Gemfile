@@ -16,3 +16,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'aws-sdk'
 gem 'middleman-sync'
+gem 'rspec'
+gem 'capybara'
