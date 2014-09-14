@@ -3,3 +3,5 @@ rvm:
   - 2.1
 install:
   - bundle install
+before_script:
+  - bundle exec rspec
