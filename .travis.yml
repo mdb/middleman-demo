@@ -3,3 +3,13 @@ rvm: 2.1
 install: bundle install
 before_script: bundle exec rspec
 script: bundle exec middleman build
+deploy:
+  provider: s3
+  access_key_id: AKIAJOJMPUB4V7POO4UA
+  secret_access_key:
+    secure: BWWQSwbPV9swDCfl3aJPc7QhdVClCwPGgvFkiWk4z7qOfFyGyi/bWptm7GmETt2Ieesvi0hJzYZY8cbNgDGsMtZ+6JiELVlejigw45yF890RQzasMQ6SRb5T6PDEY1U8Qj5hvTNWLobzEIMAc7YHXGQlqRMQHrZz9bDrQ7bolWE=
+  bucket: www.middlemandemo.com
+  local-dir: build
+  acl: !ruby/string:HighLine::String public_read
+  on:
+    repo: mdb/middleman-demo
